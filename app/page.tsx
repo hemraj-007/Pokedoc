@@ -12,26 +12,25 @@ import {
 import AutoStoriesIcon from '@mui/icons-material/AutoStories';
 import CollectionsIcon from '@mui/icons-material/Collections';
 import FilterAltIcon from '@mui/icons-material/FilterAlt';
-import Grid from '@mui/material/Grid';
 
 
 const sections = [
   {
-    title: 'Part 1: Single Pokémon Lookup',
+    title: 'Part 1: Single Pokémon Lookup',
     description:
       'Search for a single Pokémon by name and view its details (id, types, sprite).',
     href: '/part1',
     icon: <AutoStoriesIcon fontSize="large" color="primary" />,
   },
   {
-    title: 'Part 2: Batch Pokémon Lookup',
+    title: 'Part 2: Batch Pokémon Lookup',
     description:
       'Enter a comma‑separated list of names to fetch multiple Pokémon at once.',
     href: '/part2',
     icon: <CollectionsIcon fontSize="large" color="secondary" />,
   },
   {
-    title: 'Part 3: Filter by Type',
+    title: 'Part 3: Filter by Type',
     description:
       'Select a Pokémon type to filter the entire Pokedex by that type.',
     href: '/part3',
@@ -47,21 +46,13 @@ export default function Home() {
           🐞 Pokedex Project
         </Typography>
         <Typography variant="h6" color="text.secondary">
-          Built with TypeScript, Next.js, Prisma, tRPC & Material UI
+          Built with TypeScript, Next.js, Prisma, tRPC & Material UI
         </Typography>
       </Box>
 
-      <Grid container spacing={4}>
+      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '2rem' }}>
         {sections.map(({ title, description, href, icon }, idx) => (
-          <Grid
-            key={href}
-            item
-            xs={12}
-            sm={6}
-            md={4}
-            // center only the 3rd card
-            sx={idx === 2 ? { mx: 'auto' } : undefined}
-          >
+          <div key={href}>
             <Card
               sx={{
                 height: '100%',
@@ -98,9 +89,9 @@ export default function Home() {
                 </Button>
               </CardActions>
             </Card>
-          </Grid>
+          </div>
         ))}
-      </Grid>
+      </div>
     </Container>
   );
 }
