@@ -4,6 +4,14 @@ A full‑stack Pokedex application demonstrating **TypeScript**, **Next.js**, **
 
 ---
 
+## ☁️ Deployment on Vercel
+
+The Pokedex Project is live and deployed at:
+
+**https://pokedoc.vercel.app/**
+
+---
+
 ## 🔍 Features
 
 1. **Part 1: Single Pokémon Lookup**
@@ -92,13 +100,6 @@ A full‑stack Pokedex application demonstrating **TypeScript**, **Next.js**, **
 - **`npm run lint`**: Lint and type‑check
 - **`npm run vercel-build`**: Generate Prisma client, deploy migrations, and build for Vercel
 
----
-
-## ☁️ Deployment on Vercel
-
-The Pokedex Project is live and deployed at:
-
-**https://pokedoc.vercel.app/**
 
 Feel free to explore all three parts:
 - Single Pokémon Lookup
