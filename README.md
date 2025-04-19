@@ -19,8 +19,6 @@ A full‑stack Pokedex application demonstrating **TypeScript**, **Next.js**, **
    - Dropdown selects a type (or “All Types”).
    - Displays only Pokémon matching the selected type.
 
-> **Bonus**: Pagination, caching strategies, responsive UI, and CI/CD deployment.
-
 ---
 
 ## 🚀 Tech Stack
@@ -35,7 +33,6 @@ A full‑stack Pokedex application demonstrating **TypeScript**, **Next.js**, **
 - **Vercel** (Hosting & CI/CD)
 
 ---
-
 
 ## 🔧 Setup & Development
 
@@ -62,6 +59,10 @@ A full‑stack Pokedex application demonstrating **TypeScript**, **Next.js**, **
    ```bash
    npx prisma db seed
    ```
+   This populates your database with the following dummy Pokémon:
+- **Bulbasaur** (types: grass, poison)
+- **Charmander** (types: fire)
+- **Squirtle** (types: water)
 
 5. **Run in Development**
    ```bash
@@ -95,15 +96,15 @@ A full‑stack Pokedex application demonstrating **TypeScript**, **Next.js**, **
 
 ## ☁️ Deployment on Vercel
 
-1. **Push** your code to GitHub.
-2. In Vercel dashboard, **Import Project** from your repo.
-3. Set the **Environment Variable** `DATABASE_URL` in project settings.
-4. Configure **Build Command** to `npm run vercel-build`.
-5. **Deploy** — Vercel will handle migrations and build automatically.
+The Pokedex Project is live and deployed at:
 
-> **Ensure** your Tailwind CSS globals are imported in `layout.tsx` (App Router) or `_app.tsx` (Pages Router), and that your `tailwind.config.js` `content` section covers all your components.
+**https://pokedoc.vercel.app/**
 
----
+Feel free to explore all three parts:
+- Single Pokémon Lookup
+- Batch Pokémon Lookup
+- Filterable Pokedex
+
 
 ## 📄 License
 
