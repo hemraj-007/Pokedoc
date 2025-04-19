@@ -5,12 +5,20 @@ import { publicProcedure, router } from '../trpc';
 export const pokemonRouter = router({
   // existing single lookup
   getByName: publicProcedure
-    .input(z.string().min(1))
-    .query(async ({ ctx, input }) => {
-      return ctx.prisma.pokemon.findUnique({
-        where: { name: input },
-      });
-    }),
+  .input(z.string().min(1))
+  .query(async ({ ctx, input }) => {
+    const name = input.trim();  // remove leading/trailing whitespace
+    const pokemon = await ctx.prisma.pokemon.findFirst({
+      where: {
+        name: {
+          equals: name,
+          mode: 'insensitive',  // ← this makes it case‑insensitive
+        },
+      },
+    });
+    return pokemon;
+  }),
+
 
   // existing “get all”
   getAll: publicProcedure.query(async ({ ctx }) => {
